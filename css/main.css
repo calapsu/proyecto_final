@@ -98,6 +98,78 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+/* header */
+div.hero {
+  background-image: url(../img/encabezado.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+div.content-header {
+  padding-top: 40px;
+}
+@media (min-width: 768px) {
+  div.content-header {
+    padding-top: 10px;
+  }
+}
+nav.social-networks {
+  text-align: center;
+}
+nav.social-networks a {
+  color: #ffffff;
+  font-size: 2em;
+  margin-right: 20px;
+}
+nav.social-networks a:last-child {
+  margin-right: 0;
+}
+
+div.event-information {
+  text-align: center;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  div.event-information {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+div.event-information p {
+  margin: 0;
+  display: inline;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+div.event-information p i {
+  color: #fe4918;
+}
+
+p.date {
+  float: left;
+}
+
+p.city {
+  float: right;
+  text-align: right;
+}
+/* /header */
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -262,4 +334,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
