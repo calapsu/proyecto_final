@@ -224,6 +224,59 @@ h1.site-name {
   background-color: #353535;
   padding: 20px 0;
 }
+.logo {
+  width: 80%;
+}
+
+.logo img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 33%;
+    float: left;
+  }
+}
+
+/* navegacion principal */
+.main-navigation {
+  display: none;
+}
+
+.main-navigation a {
+  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.6s ease;
+}
+.main-navigation a:last-child {
+  border: solid 2px #fe4918;
+  color: #fe4918;
+}
+.main-navigation a:last-child:hover {
+  color: #ffffff;
+}
+
+.main-navigation a:hover {
+  background-color: #fe4918;
+}
+
+@media (min-width: 768px) {
+  .main-navigation {
+    width: 67%;
+    float: right;
+    text-align: right;
+    display: block;
+  }
+  .main-navigation a {
+    margin-right: 10px;
+    padding: 10px 10px;
+    display: inline-block;
+  }
+}
 /* /barra */
 
 /* ==========================================================================
