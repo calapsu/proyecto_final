@@ -479,6 +479,14 @@ h1.site-name {
 
 .invited img {
   max-width: 100%;
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  -webkit-transition: all 0.5s ease-in-out;
+}
+.invited:hover img {
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.1);
+  transform: rotate3d(1, 1, 1, 3deg);
 }
 
 .invited p {
@@ -494,6 +502,12 @@ h1.site-name {
   color: #fe4918;
   font-weight: bold;
   text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+}
+
+.invited:hover p {
+  bottom: -80px;
+  opacity: 0;
 }
 /* /invitados */
 
