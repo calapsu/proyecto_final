@@ -158,6 +158,34 @@ h2::after {
   width: 100px;
   display: block;
 }
+h3 {
+  font-size: 1.8em;
+  color: #fe4918;
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+}
+
+.button {
+  font-family: "Oswald", sans-serif;
+  background-color: #fe4918;
+  padding: 10px 40px;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e33000;
+}
+
+.float-right {
+  float: right;
+}
 
 /* header */
 div.hero {
@@ -395,13 +423,31 @@ h1.site-name {
   }
 }
 
-.menu-program a i {
+.menu-program a i,
+.event-detail p i {
   color: #fe4918;
   font-size: 1.6em;
   margin-right: 10px;
 }
 
 /* /programacion evento */
+
+/* detalle evento */
+.event-detail {
+  margin-top: 20px;
+  border-bottom: solid 1px #000000;
+  padding: 0px 20px;
+}
+
+.event-detail:nth-child(2) {
+  border: none;
+}
+
+.event-detail p {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+/* /detalle evento */
 
 /* ==========================================================================
    Helper classes
