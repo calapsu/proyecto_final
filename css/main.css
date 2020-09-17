@@ -333,9 +333,40 @@ h1.site-name {
 }
 /* /menu movil */
 
-/* description del evento */
+/* programacion evento */
+.program {
+  position: relative;
+}
 
-/* /description del evento */
+.container-video {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.content-program {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100;
+  width: 100%;
+}
+
+.program-event {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  margin-top: 80px;
+}
+@media (min-width: 768px) {
+  .program-event {
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .program-event {
+    width: 50s%;
+  }
+}
+/* /programacion evento */
 
 /* ==========================================================================
    Helper classes
