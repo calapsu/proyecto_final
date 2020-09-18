@@ -563,11 +563,49 @@ h1.site-name {
   display: block;
   margin: 0 0 10px 0;
   font-weight: bold;
+  font-family: "Oswald", sans-serif;
 }
 /* /contador */
 
 /* precios */
+.price-list > li {
+  padding: 10px;
+}
+@media (min-width: 758px) {
+  .price-list > li {
+    float: left;
+    width: 33.3%;
+  }
+}
 
+.price-table {
+  border: 1px solid #e1e1e1;
+  background-color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.price-table ul li {
+  display: block;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #868686;
+  line-height: 26px;
+}
+
+.price-table h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.price-table .number {
+  color: #000000;
+  font-size: 36px;
+  margin: 20px 0;
+}
 /* /precios */
 
 /* ==========================================================================
