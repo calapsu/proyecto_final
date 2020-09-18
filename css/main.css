@@ -523,6 +523,8 @@ h1.site-name {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  -webkit-filter: brightness(0.8);
+  filter: brightness(0.8);
 }
 .counter {
   position: relative;
@@ -563,6 +565,10 @@ h1.site-name {
   font-weight: bold;
 }
 /* /contador */
+
+/* precios */
+
+/* /precios */
 
 /* ==========================================================================
    Helper classes
