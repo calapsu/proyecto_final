@@ -754,6 +754,26 @@ h1.site-name {
   }
 /* /registro */
 
+/* cuenta regresiva */
+  .countdown ul li {
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .countdown ul li .number {
+    font-size: 75px;
+  }
+
+  @media (min-width: 768px)  {
+    .countdown ul li {
+      width: 25%;
+      float:left;
+    }
+  }
+
+/* /cuenta regresiva */
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
