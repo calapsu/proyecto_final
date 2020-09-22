@@ -777,6 +777,54 @@ h1.site-name {
 
 /* footer */
 
+.site-footer {
+  background-color: #353535;
+  padding-top: 40px;
+  margin-top: 20px;
+}
+
+.site-footer .container > div {
+  color: #ffffff;
+  padding: 0px 20px;
+  font-size: 12px;
+  text-align: justify;
+}
+
+@media (min-width: 768px)  {
+  .site-footer .container > div {
+    width: 33.3%;
+    float: left;
+  }
+}
+
+.site-footer h3 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Oswald' sans-serif;
+  margin-bottom: 20px;
+}
+
+.site-footer  span {
+  color: #fe4918;
+}
+
+.site-footer .last-tweets li {
+  margin-bottom: 10px;
+}
+
+.site-footer nav.social-networks {
+  text-align: left;
+}
+
+
+.copyright {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+}
+
 
 /* /footer */
 
