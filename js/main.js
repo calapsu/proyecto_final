@@ -4,6 +4,21 @@
     var regalo = document.getElementById('regalo');
 
     document.addEventListener("DOMContentLoaded", function () {
+
+        //mapa
+        var map = L.map('mapa').setView([2.196899, -75.628831], 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([2.196899, -75.628831]).addTo(map)
+            .bindPopup('GDLWEbCamp 2020 <br> Boletos ya disponibles')
+            .openPopup()
+            .bindTooltip('Garzon-Huila')
+            .openTooltip();
+
+
         //Campos Datos usuarios
         var nombre = document.getElementById("nombre");
         var apellido = document.getElementById("apellido")
