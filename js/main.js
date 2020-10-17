@@ -145,3 +145,24 @@
         }
     });
 })();
+
+
+//programa del evento
+
+
+$(function () {
+
+    //Programa de Conferencia
+    $('.program-event .info-course:first').show();
+    $('.menu-program a:first').addClass('activo');
+
+    $('.menu-program a').on('click', function () {
+        $('.menu-program a').removeClass('activo');
+        $(this).addClass('activo');
+        $('.hide').hide();
+        var enlace = $(this).attr('href')
+        $(enlace).fadeIn(1000)
+
+        return false;
+    });
+});
