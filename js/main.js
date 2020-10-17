@@ -155,7 +155,6 @@ $(function () {
     //Programa de Conferencia
     $('.program-event .info-course:first').show();
     $('.menu-program a:first').addClass('activo');
-
     $('.menu-program a').on('click', function () {
         $('.menu-program a').removeClass('activo');
         $(this).addClass('activo');
@@ -164,5 +163,21 @@ $(function () {
         $(enlace).fadeIn(1000)
 
         return false;
+    });
+
+    //Animaciones para los Numeros
+    $('.summary-event li:nth-child(1) p').animateNumber({ number: 6 }, 1200)
+    $('.summary-event li:nth-child(2) p').animateNumber({ number: 15 }, 1200)
+    $('.summary-event li:nth-child(3) p').animateNumber({ number: 3 }, 1000)
+    $('.summary-event li:nth-child(4) p').animateNumber({ number: 9 }, 1500)
+
+
+    //cuenta regresiva
+
+    $('.countdown').countdown('2020/12/10 09:00:00', function (event) {
+        $('#days').html(event.strftime('%D'));
+        $('#hours').html(event.strftime('%H'));
+        $('#minute').html(event.strftime('%M'));
+        $('#seconds').html(event.strftime('%S'));
     });
 });
