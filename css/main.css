@@ -208,6 +208,28 @@ ul {
   padding: 0;
 }
 
+/* lettering */
+h1.site-name span {
+  position: relative;
+  text-shadow: 0 0 30px black;
+}
+
+@media (min-width: 992px )  {
+  .char1 {top: 20px; right: 20px}
+  .char2 {top: 0px; left:-20px}
+  .char3 {top: 10px; right:20px}
+  .char4 {top:5px; right:10px}
+  .char5 {top:15px; right: 10px;}
+  .char6 {top: 5px; left:10px}
+  .char7 {top: 20px; left:-10px}
+  .char8 {top: 0; left: 10px;}
+  .char9 {top: 10px; right: 20px;}
+  .char10 {top: 20px; right: 20px;}
+}
+
+/* /lettering */
+
+
 /* header */
 div.hero {
   background-image: url(../img/encabezado.jpg);
@@ -294,6 +316,14 @@ h1.site-name {
   background-color: #353535;
   padding: 20px 0;
 }
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  top:0;
+  left: 0;
+  z-index: 2;
+}
 .logo {
   width: 80%;
   float: left;
@@ -313,6 +343,7 @@ h1.site-name {
 
 .main-navigation {
   display: none;
+  width: 100%;
 }
 .main-navigation a {
   font-family: "Oswald", sans-serif;
@@ -671,6 +702,7 @@ div.hide {
 /* mapa */
 .map {
   height: 420px;
+  z-index: 1;
 }
 /* /mapa */
 
@@ -854,6 +886,17 @@ div.hide {
 
 /* INTERNAS */
 
+/* conferencia */
+
+body.conferencia .main-navigation .activo {
+  border-bottom: 2px solid #fe4918;
+}
+    div.galeria a {
+      display:inline-block;
+      margin-bottom: 10px;
+    }
+/* /conferencia */
+
 /* registro */
 .registro h3 {
 text-align: center;
@@ -990,6 +1033,8 @@ margin-bottom: 10px;
 }
    
 /* /Resumen registro */
+
+
 
 /* /INTERNAS  */
 
