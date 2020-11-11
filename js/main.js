@@ -213,4 +213,8 @@ $(function () {
         $('#minute').html(event.strftime('%M'));
         $('#seconds').html(event.strftime('%S'));
     });
+
+    //Colorbox
+
+    $('.invitado-info').colorbox({inline:true, width: "50%" });
 });
