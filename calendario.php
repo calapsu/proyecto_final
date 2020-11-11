@@ -9,7 +9,7 @@
     <?php
     try {
         require_once('includes/fuciones/bd_conexion.php');
-        $sql = " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, nombre_invitado, apellido_invitado ";
+        $sql = " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre_invitado, apellido_invitado ";
         $sql .= " FROM eventos ";
         $sql .= " INNER JOIN categoria_evento ";
         $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
@@ -21,6 +21,8 @@
         echo $e->getMessage();
     }
     ?>
+
+
 
     <div class="calendario">
         <?php
@@ -37,6 +39,7 @@
                 'fecha' => $eventos['fecha_evento'],
                 'hora' => $eventos['hora_evento'],
                 'categoria' => $eventos['cat_evento'],
+                'icono' => 'fa' . " " .  $eventos['icono'],
                 'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']
             );
 
@@ -49,19 +52,32 @@
         //imprime todos los eventos
         foreach ($calendario as $dia => $lista_eventos) { ?>
             <h3>
-                <i class="fa fa-calendar"></i>
+                <i class="far fa-calendar-alt"></i>
                 <?php
                 setlocale(LC_TIME, 'spanish');
                 echo  utf8_encode(strftime("%A, %d de %B del %Y", strtotime($dia))); ?>
             </h3>
-        <?php }
+
+            <?php foreach ($lista_eventos as $evento) { ?>
+                <div class="dia">
+                    <p class="titulo"><?php echo $evento['titulo']; ?> </p>
+                    <p class="hora">
+                        <i class="far fa-clock" aria-hidden="true"></i>
+                        <?php echo $evento['fecha'] . " " . $evento['hora']; ?>
+                    </p>
+
+                    <p>
+                        <i class="<?php echo $evento['icono']; ?>"></i>
+                        <?php echo $evento["categoria"] ?></p>
+                    <p>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <?php echo $evento['invitado']; ?>
+                    </p>
+                </div>
+            <?php } //fin de foreach eventos 
+            ?>
+        <?php } // fin  foreach de dias
         ?>
-
-        <pre>
-            <?php var_dump($calendario); ?>
-        </pre>
-
-
     </div>
 
     <?php
