@@ -161,6 +161,12 @@ $(function () {
 
     $('.site-name').lettering();
 
+    //agregar clase a Menu
+
+    $('body.conferencia .main-navigation a:contains("Conferencia")').addClass('activo');
+    $('body.calendario .main-navigation a:contains("Calendario")').addClass('activo');
+    $('body.invitados .main-navigation a:contains("Invitados")').addClass('activo');
+
     //Menu fijo
 
     var windowHeight = $(window).height();

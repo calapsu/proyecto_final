@@ -31,7 +31,7 @@
     <meta name="theme-color" content="#fafafa" />
 </head>
 
-<body>
+<body class="<?php echo $pagina ?>">
     <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please

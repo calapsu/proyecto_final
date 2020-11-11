@@ -909,7 +909,7 @@ blockquote p::before {
 
 /* conferencia */
 
-body.conferencia .main-navigation .activo {
+.main-navigation .activo {
   border-bottom: 2px solid #fe4918;
 }
 div.galeria a {
