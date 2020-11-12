@@ -26,60 +26,88 @@
     <div class="container">
       <div class="program-event">
         <h2>Programa del Evento</h2>
+
+        <?php
+        try {
+          require_once('includes/fuciones/bd_conexion.php');
+          $sql = "SELECT * FROM `categoria_evento` ";
+          $resultado = $conn->query($sql);
+        } catch (Exception $e) {
+          $error = $e->getMessage();
+        }
+        ?>
+
         <nav class="menu-program">
-          <a href="#talleres"><i class="fas fa-code"></i>Talleres</a>
-          <a href="#conferencias"><i class="fas fa-comment"></i>Conferencias</a>
-          <a href="#seminarios"><i class="fas fa-university"></i>Seminarios</a>
+          <?php while ($cat = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+            <?php $categoria = $cat['cat_evento']; ?>
+            <a href="#<?php echo strtolower($categoria)  ?>">
+              <i class="fas <?php echo $cat['icono'] ?>"></i><?php echo $categoria ?></a>
+          <?php } ?>
         </nav>
 
-        <div id="talleres" class="info-course hide clearfix">
-          <div class="event-detail">
-            <h3>HTML5, CSS3 y JavaScript</h3>
-            <p><i class="far fa-clock"></i>16:00 hrs</p>
-            <p><i class="far fa-calendar-alt"></i>10 de Dic</p>
-            <p><i class="fas fa-user"></i>Sebastian Calapsu carvajal</p>
-          </div>
-          <div class="event-detail">
-            <h3>Responsive web Desing</h3>
-            <p><i class="far fa-clock"></i>16:00 hrs</p>
-            <p><i class="far fa-calendar-alt"></i>10 de Dic</p>
-            <p><i class="fas fa-user"></i>Sebastian Calapsu carvajal</p>
-          </div>
+        <?php
+        try {
+          require_once('includes/fuciones/bd_conexion.php');
+          $sql = " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre_invitado, apellido_invitado ";
+          $sql .= " FROM eventos ";
+          $sql .= " INNER JOIN categoria_evento ";
+          $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+          $sql .= " INNER JOIN invitados";
+          $sql .= " ON eventos.id_inv = invitados.invitado_id ";
+          $sql .= " AND eventos.id_cat_evento = 1 ";
+          $sql .= "ORDER BY `evento_id` LIMIT 2;";
+          $sql .= " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre_invitado, apellido_invitado ";
+          $sql .= " FROM eventos ";
+          $sql .= " INNER JOIN categoria_evento ";
+          $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+          $sql .= " INNER JOIN invitados";
+          $sql .= " ON eventos.id_inv = invitados.invitado_id ";
+          $sql .= " AND eventos.id_cat_evento = 2 ";
+          $sql .= "ORDER BY `evento_id` LIMIT 2;";
+          $sql .= " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre_invitado, apellido_invitado ";
+          $sql .= " FROM eventos ";
+          $sql .= " INNER JOIN categoria_evento ";
+          $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+          $sql .= " INNER JOIN invitados";
+          $sql .= " ON eventos.id_inv = invitados.invitado_id ";
+          $sql .= " AND eventos.id_cat_evento = 3 ";
+          $sql .= "ORDER BY `evento_id` LIMIT 2;";
+        } catch (\Exception $e) {
+          echo $e->getMessage();
+        }
+        ?>
 
-          <a href="#" class="button float-right">ver todos</a>
-        </div>
-        <div id="conferencias" class="info-course hide clearfix">
-          <div class="event-detail">
-            <h3>Como ser Freelancer</h3>
-            <p><i class="far fa-clock"></i>10:00 hrs</p>
-            <p><i class="far fa-calendar-alt"></i>10 de Dic</p>
-            <p><i class="fas fa-user"></i>Gregorio Sanchéz</p>
-          </div>
-          <div class="event-detail">
-            <h3>Tecnología del Futuro</h3>
-            <p><i class="far fa-clock"></i>17:00 hrs</p>
-            <p><i class="far fa-calendar-alt"></i>10 de Dic</p>
-            <p><i class="fas fa-user"></i>Susan Sanchez</p>
-          </div>
+        <?php $conn->multi_query($sql); ?>
 
-          <a href="#" class="button float-right">ver todos</a>
-        </div>
-        <div id="seminarios" class="info-course hide clearfix">
-          <div class="event-detail">
-            <h3>Diseño de UI/UX para móviles</h3>
-            <p><i class="far fa-clock"></i>17:00 hrs</p>
-            <p><i class="far fa-calendar-alt"></i>11 de Dic</p>
-            <p><i class="fas fa-user"></i>Haról Garcia</p>
-          </div>
-          <div class="event-detail">
-            <h3>Aprende a programar en una mañana</h3>
-            <p><i class="far fa-clock"></i>10:00 hrs</p>
-            <p><i class="far fa-calendar-alt"></i>11 de Dic</p>
-            <p><i class="fas fa-user"></i>Susana Rívera</p>
-          </div>
+        <?php
+        do {
+          $resultado = $conn->store_result();
+          $row = $resultado->fetch_all(MYSQLI_ASSOC); ?>
 
-          <a href="#" class="button float-right">ver todos</a>
-        </div>
+          <?php $i = 0; ?>
+          <?php foreach ($row as $evento) : ?>
+            <?php if ($i % 2 == 0) { ?>
+              <div id="<?php echo strtolower($evento['cat_evento']) ?>" class="info-course hide clearfix">
+              <?php }  ?>
+              <div class="event-detail">
+                <h3><?php echo $evento['nombre_evento'] ?></h3>
+                <p><i class="far fa-clock"></i><?php echo $evento['hora_evento']; ?></p>
+                <p><i class="far fa-calendar-alt"></i><?php echo $evento['fecha_evento']; ?></p>
+                <p><i class="fas fa-user"></i><?php echo $evento['nombre_invitado'] . " " . $evento['apellido_invitado'] ?></p>
+              </div>
+
+              <?php if ($i % 2 == 1) : ?>
+                <a href="calendario.php" class="button float-right">ver todos</a>
+              </div>
+            <?php endif;  ?>
+            <?php $i++; ?>
+          <?php endforeach; ?>
+          <?php $resultado->free(); ?>
+
+        <?php } while ($conn->more_results() && $conn->next_result());
+
+        ?>
+
       </div>
     </div>
   </div>
