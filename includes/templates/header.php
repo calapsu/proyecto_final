@@ -28,7 +28,8 @@
 
     <link rel="stylesheet" href="css/main.css" />
 
-    <meta name="theme-color" content="#fafafa" />
+
+
 </head>
 
 <body class="<?php echo $pagina ?>">

@@ -235,7 +235,7 @@
   <div class=" content container">
     <p> regístrate al newsletter:</p>
     <h3>gdlwebcamp</h3>
-    <a href="#" class="button transparent">Registro</a>
+    <a href="#mc_embed_signup" class="boton_newsletter button transparent">Registro</a>
   </div>
 </div>
 <!-- /register -->
